@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    /* <!--        form{-->
+<!--            margin-left:200px;-->
+<!--            margin-right:200px;-->
+<!--        }-->
+        .container1{
+            margin-left:130px;
+            margin-right:800px;
+        } */
+
+    body {
+      background: url('{% static "images/welcome_back.jpg" %}') 50% 0 no-repeat fixed;
+      width: 100%;
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .full_block {
+      width: 50%;
+      left: 25%;
+      top: 10%;
+      /* height: 30vh; */
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      background-color: rgba(128, 128, 128, 0.44);
+      /* top: 30vh !important; */
+      /* left: 30% !important; */
+      border-radius: 2rem !important;
+      overflow: hidden;
+    }
+
+    .nav-link{
+      background-color: white;
+      color: black;
+      margin: 0 5px;
+      border-radius: 5px;
+    }
+
+    .form-group{
+      text-align: left !important;
+    }
+    .form-group label{
+      color: white;
+
+    }
+
+    .main_form{
+      display: inline-block !important;
+      width: 80%;
+    }
+
+
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+  <div class="full_block">
+
+    <div class="container">
+      <h1 class="text-center alert alert-info" style="background-color: rgba(128, 128, 128, 0) !important; border: none !important; color: white;">Login Form</h1>
+    </div>
+
+    <div class="container">
+      <nav class="navbar navbar-expand-lg alert alert-danger" style="text-align: center; background-color: rgba(128, 128, 128, 0) !important;">
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'login' %}" style="padding: 10px">Login <span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}" style="padding: 10px">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'welcome' %}" style="padding: 10px">Back</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+    <div class="container1">
+      <label>{{ warning_message }}</label>
+    </div>
+
+    <div class="container1">
+      <form class="main_form" action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label>Email address</label>
+          <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-bottom: 10px;">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Login</title>-->
+<!--    <style>-->
+<!--&lt;!&ndash;        form{&ndash;&gt;-->
+<!--&lt;!&ndash;            margin-left:200px;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin-right:200px;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--        .container1{-->
+<!--            margin-left:130px;-->
+<!--            margin-right:800px;-->
+<!--        }-->
+<!--    </style>-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container mt-5">-->
+<!--        <h1 class="text-center alert alert-info">Login Form</h1>-->
+<!--    </div>-->
+
+<!--    <div class="container">-->
+<!--        <nav class="navbar navbar-expand-lg alert alert-danger">-->
+
+<!--          <div class="collapse navbar-collapse" id="navbarNav">-->
+<!--            <ul class="navbar-nav">-->
+<!--              <li class="nav-item active">-->
+<!--                <a class="nav-link" href="{% url 'login' %}" style="padding-left: 20px">Login <span class="sr-only">(current)</span></a>-->
+<!--              </li>-->
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="{% url 'register' %}" style="padding-left: 20px">Register</a>-->
+<!--              </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="{% url 'welcome' %}" style="padding-left: 850px">Back</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </nav>-->
+
+<!--    </div>-->
+
+<!--    <div class="container1 mt-5">-->
+<!--        <label>{{ warning_message }}</label>-->
+<!--    </div>-->
+
+<!--    <div class="container1 mt-5">-->
+<!--        <form action="" method="post">-->
+<!--            {% csrf_token %}-->
+<!--          <div class="form-group">-->
+<!--            <label>Email address</label>-->
+<!--            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">-->
+<!--          </div>-->
+<!--          <div class="form-group">-->
+<!--            <label>Password</label>-->
+<!--            <input type="password" class="form-control" name="password" placeholder="Password">-->
+<!--          </div>-->
+
+<!--          <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--        </form>-->
+<!--    </div>-->
+
+
+
+
+<!--</body>-->
+<!--</html>-->

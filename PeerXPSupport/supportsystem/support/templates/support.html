@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Support</title>
+    <style>
+        form{
+            margin-left:130px;
+            margin-right:300px;
+        }
+        .contain{
+            margin-left:130px;
+            margin-right:800px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="alert alert-danger container mt-5" role="alert">
+        <h1 style="text-align: center">Welcome To Support Form</h1>
+        <label style="padding-left: 20px">{{ email }}</label>
+    </div>
+
+    <div class = "contain">
+        <a class="btn btn-primary" href="{% url 'addticket' %}" style="padding-left: 20px">Add Ticket </a>
+        <a class="btn btn-primary" href="{% url 'welcome' %}" style="padding-left: 20px">Back</a>
+    </div>
+
+<!--    <div class="alert alert-success container" role="alert">-->
+<!--      <label>{{ email }}</label>-->
+<!--    </div>-->
+<!--    <nav class="navbar navbar-expand-lg alert alert-danger container">-->
+
+<!--      <div class="collapse navbar-collapse" id="navbarNav">-->
+
+<!--        <ul class="navbar-nav">-->
+<!--            <li class="nav-item">-->
+<!--&lt;!&ndash;                <a class="nav-link" href="{% url 'addticket' %}" style="padding-left: 20px">Add Ticket</a>&ndash;&gt;-->
+<!--                <a class="btn btn-primary" href="{% url 'addticket' %}" style="padding-left: 20px">Add Ticket </a>-->
+
+<!--            </li>-->
+
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="{% url 'welcome' %}" style="padding-left: 850px">Back</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--          </div>-->
+<!--    </nav>-->
+
+
+
+</body>
+</html>

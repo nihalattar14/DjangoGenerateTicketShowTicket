@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <style>
+    /* form{
+            margin-left:130px;
+            margin-right:300px;
+        }
+<!--        .container1{-->
+<!--            margin-left:130px;-->
+<!--            margin-right:800px;-->
+<!--        }-->
+        .required
+                {
+                    color: red;
+                } */
+    body {
+      background: url('{% static "images/welcome_back.jpg" %}') 50% 0 no-repeat fixed;
+      width: 100%;
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .full_block {
+      width: 50%;
+      left: 25%;
+      top: 10%;
+      /* height: 30vh; */
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      background-color: rgba(128, 128, 128, 0.44);
+      /* top: 30vh !important; */
+      /* left: 30% !important; */
+      border-radius: 2rem !important;
+      overflow: hidden;
+    }
+    .nav-link{
+      background-color: white;
+      color: black;
+      margin: 0 5px;
+      border-radius: 5px;
+    }
+    .form-group{
+      text-align: left !important;
+    }
+    .form-group label{
+      color: white;
+
+    }
+    .main_form{
+      display: inline-block !important;
+      width: 80%;
+    }
+
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+
+  <div class="full_block">
+
+    <div>
+      <h1 class="text-center alert alert-info" style="background-color: rgba(128, 128, 128, 0) !important; border: none !important; color: white;">Register Form</h1>
+    </div>
+
+    <div class="container" style="text-align: center; padding:0 !important; width: 80%;">
+      <nav class="navbar navbar-expand-lg alert alert-danger" style="text-align: center; background-color: rgba(128, 128, 128, 0) !important; position: relative;">
+
+        <div class="collapse navbar-collapse" style="text-align: center; display: inline-block;" id="navbarNav">
+          <ul class="navbar-nav" >
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'login' %}" style="padding: 10px;" >Login </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}" style="padding: 10px">Register <span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'welcome' %}" style="padding: 10px">Back</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+    <form class="main_form" action="" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for=>First Name</label><span class="required"> *</span>
+        <input type="text" class="form-control" name="first_name" placeholder="First Name">
+      </div>
+      <div class="form-group">
+        <label for=>Last Name</label>
+        <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <label>Email address</label><span class="required"> *</span>
+        <input type="text" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label>Password</label><span class="required"> *</span>
+        <input type="password" class="form-control" name="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary" style="margin-bottom: 10px;">Submit
+        <!--          <a class="btn btn-primary" href="{% url 'register' %}" style="padding-left: 20px">Submit </a>-->
+      </button>
+
+    </form>
+
+    <!--    <div class="container1 mt-5">-->
+    <!--        -->
+    <!--    </div>-->
+  </div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Register</title>-->
+<!--    <style>-->
+<!--        form{-->
+<!--            margin-left:130px;-->
+<!--            margin-right:300px;-->
+<!--        }-->
+<!--&lt;!&ndash;        .container1{&ndash;&gt;-->
+<!--&lt;!&ndash;            margin-left:130px;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin-right:800px;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--        .required-->
+<!--                {-->
+<!--                    color: red;-->
+<!--                }-->
+<!--    </style>-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container mt-5">-->
+<!--        <h1 class="text-center alert alert-info">Register Form</h1>-->
+<!--    </div>-->
+
+<!--    <div class="container">-->
+<!--        <nav class="navbar navbar-expand-lg alert alert-danger">-->
+
+<!--          <div class="collapse navbar-collapse" id="navbarNav">-->
+<!--            <ul class="navbar-nav">-->
+<!--              <li class="nav-item active">-->
+<!--                <a class="nav-link" href="{% url 'login' %}" style="padding-left: 20px">Login </a>-->
+<!--              </li>-->
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="{% url 'register' %}" style="padding-left: 20px">Register <span class="sr-only">(current)</span></a>-->
+<!--              </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="{% url 'welcome' %}" style="padding-left: 850px">Back</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </nav>-->
+
+<!--    </div>-->
+
+<!--    <form action="" method="post">-->
+<!--        {% csrf_token %}-->
+<!--          <div class="form-group">-->
+<!--            <label for=>First Name</label><span class="required"> *</span>-->
+<!--            <input type="text" class="form-control" name="first_name" placeholder="First Name">-->
+<!--          </div>-->
+<!--          <div class="form-group">-->
+<!--            <label for=>Last Name</label>-->
+<!--            <input type="text" class="form-control" name="last_name" placeholder="Last Name">-->
+<!--          </div>-->
+<!--          <div class="form-group">-->
+<!--            <label >Email address</label><span class="required"> *</span>-->
+<!--            <input type="text" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">-->
+<!--          </div>-->
+<!--          <div class="form-group">-->
+<!--            <label >Password</label><span class="required"> *</span>-->
+<!--            <input type="password" class="form-control" name="password" placeholder="Password">-->
+<!--          </div>-->
+<!--          <button type="submit" class="btn btn-primary" >Submit-->
+<!--&lt;!&ndash;          <a class="btn btn-primary" href="{% url 'register' %}" style="padding-left: 20px">Submit </a>&ndash;&gt;-->
+<!--          </button>-->
+
+<!--        </form>-->
+
+<!--&lt;!&ndash;    <div class="container1 mt-5">&ndash;&gt;-->
+<!--&lt;!&ndash;        &ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+
+
+
+
+<!--</body>-->
+<!--</html>-->
