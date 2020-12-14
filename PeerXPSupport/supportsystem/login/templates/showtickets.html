@@ -15,17 +15,71 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
+    .main_block {
+            width: 40%;
+            height: 25vh;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            background-color: rgba(128, 128, 128, 0.44);
+            top: 30vh !important;
+            left: 30% !important;
+            border-radius: 2rem !important;
+            overflow: hidden;
+        }
+        .main_block1 {
+            width: 40%;
+            height: 25vh;
+            position: absolute;
+            display: inline-block;
+            text-align: center;
+            background-color: rgba(128, 128, 128, 0.44);
+            top: 60vh !important;
+            left: 30% !important;
+            border-radius: 2rem !important;
+            overflow: hidden;
+        }
+
+    .parent {
+          border: 2px solid #0074d9;
+          color: #0074d9;
+          padding: 20px;
+        }
+
+        .element {
+          border: 1px dotted #000;
+          background-color: #eee;
+          padding: 20px;
+          color: #000;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
     </style>
 
 
 </head>
 <body>
-<div class="alert alert-danger container mt-5" role="alert">
-<!--       <label style="padding-left: 20px">{{ success_message }}</label>-->
-<!--       <label style="padding-left: 20px">{{ description }}</label>-->
-<!--       <label style="padding-left: 20px">{{ ticket_ID }}</label>-->
-<!--       <label style="padding-left: 20px">{{ ticket_ID }}</label>-->
-</div>
+
+<!--    <div class="container mt-5">-->
+<!--        <h1 class="text-center alert alert-info">User Ticket</h1>-->
+<!--        <h1 class="text-center alert alert-info">Ticket = {{ data }}</h1>-->
+<!--    </div>-->
+
+    <div class="main_block">
+        <div class="welcome_block alert alert-danger container" role="alert">
+            <h1 style="text-align: center">User Ticket</h1>
+            <h1 style="text-align: center">Ticket:-{{ data }}</h1>
+
+<!--            {% for i in data %}-->
+<!--            {{ i }}-->
+<!--            {% endfor %}-->
+        </div>
+    </div>
+
+
+
 </body>
 </html>
 

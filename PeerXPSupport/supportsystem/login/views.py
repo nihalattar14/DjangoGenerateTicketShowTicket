@@ -154,16 +154,9 @@ def addticket(req):
 
             a = request.json()
             print("a>>>>>>>>>>>", a)
-            # ticketdetails = {
-            #     'ticket_id': a['ticketNumber'],
-            #     'subject': a['subject'],
-            #     'status': a['status'],
-            #     'description': a['description']
-            # }
-            #
-            # showtickets(req, ticketdetails)
-            # success_message = "Ticket Added Successfully "
-            return render(req, 'showtickets.html')
+
+            # showtickets(req)
+            return render(req, 'addticket.html')
         else:
             print("enter in else addticket req.method == ")
         return render(req, 'addticket.html')
@@ -171,30 +164,39 @@ def addticket(req):
         print('Exception>>>>>>>>>>>>', e, str(traceback.format_exc()))
 
 def showtickets(req):
-    return render(req, 'showtickets.html')
-    # print("ticketdetails>>>>>>>>>",ticketdetails)
+    # return render(req, 'showtickets.html')
 
-    # try:
-    #     subject = ticketdetails['subject']
-    #     description = ticketdetails['description'],
-    #     ticket_ID = ticketdetails['ticket_id'],
-    #     status = ticketdetails['status']
-    #
-    #     headers = {"orgId": "60001280952",
-    #                "Authorization": "9446933330c7f886fbdf16782906a9e0",
-    #                'content-type': 'application/json',
-    #                'Accept-Charset': 'UTF-8'
-    #                }
-    #
-    #     ticket_ID = ticketdetails['ticket_id']
-    #     url = "https://desk.zoho.in/api/v1/tickets/" + ticket_ID + "?"
-    #     request = requests.get(url=url, headers=headers)
-    #     print("request>>>>", request)
-    #     print("request.status_code>>>>>>>>", request.status_code)
-    #
-    #     return render(req, 'showtickets.html')
-    # except Exception as e:
-    #     print('Exception>>>>>>>>>>>>', e, str(traceback.format_exc()))
+    try:
+        headers = {"orgId": "60001280952",
+                   "Authorization": "9446933330c7f886fbdf16782906a9e0",
+                   'content-type': 'application/json',
+                   'Accept-Charset': 'UTF-8'
+                   }
+
+        url = "https://desk.zoho.in/api/v1/tickets?"
+        request = requests.get(url=url, headers=headers)
+        print("request>>>>", request)
+        print("request.status_code>>>>>>>>", request.status_code)
+        get_tickets = request.json()
+        print("a>>>>>>>>>>>", get_tickets)
+        data = get_tickets['data'][0]
+        print("data>>>>>>>",data)
+
+
+        # dataTodisplay = {
+        #     "subject" : data['subject'],
+        #     "ticketNumber" : data['ticketNumber'],
+        #     "status" : data['status']
+        # }
+        # print("dataTodisplay>>>>>>>", dataTodisplay)
+        return render(req, 'showtickets.html', {"data  ": data})
+
+
+    except Exception as e:
+        print('Exception>>>>>>>>>>>>', e, str(traceback.format_exc()))
+
+# def button(req):
+#     return render(req, 'showtickets.html')
 
 
 

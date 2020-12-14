@@ -37,6 +37,13 @@
             border-radius: 5px;
             width: 80px;
         }
+        .nav-link1 {
+            background-color: white;
+            color: black;
+            margin: 100px;
+            border-radius: 5px;
+            width: 80px;
+        }
 
         .form-group {
             text-align: left !important;
@@ -78,7 +85,8 @@
         <div class="alert alert-success container"
             style="text-align: center; background-color: rgba(128, 128, 128, 0) !important; position: relative;"
             role="alert">
-            <a class="nav-link" href="{% url 'support' %}" style="padding-left: 10px">Back</a>
+            <a class="nav-link" href="{% url 'showtickets' %}" style="padding-left: 10px">Show Tickets</a>
+<!--            <a class="nav-link" href="{% url 'support' %}" style="padding-left: 10px">Back</a>-->
         </div>
 
         <div class="container mb-5">
@@ -152,7 +160,7 @@
                         <input type="file" class="form-control-file" name="attach">
                     </div>
                     <button type="submit" class="btn btn-primary1 center">Submit</button>
-<!--                    <a class="btn btn-primary" href="{% url 'showtickets' %}" style="padding-left: 20px">Submit </a>-->
+<!--                    <a class="btn btn-primary" href="{% url 'addticket' %}" style="padding-left: 20px">Submit </a>-->
                     <a class="btn btn-primary" href="{% url 'support' %}" style="padding-left: 20px">Discard </a>
                 </form>
             </form>
